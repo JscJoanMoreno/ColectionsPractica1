@@ -55,6 +55,7 @@ public class BookManager {
             foundBooks.add(showByRatingDecresing().get(i));
         }
         return foundBooks;
+
     }
 
 }
