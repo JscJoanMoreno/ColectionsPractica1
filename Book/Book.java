@@ -49,12 +49,19 @@ public class Book {
                 ", rating=" + rating +
                 '}';
     }
-    public static Comparator<Book> booksCompararPerRating = new Comparator<Book>() {
+    public static Comparator<Book> booksCompararPerRatingDecreixent = new Comparator<Book>() {
         public int compare(Book a1, Book a2) {
             Integer bookRating1 = a1.getRating();
             Integer bookRating2 = a2.getRating();
 
             return bookRating2.compareTo(bookRating1);
+        }};
+    public static Comparator<Book> booksCompararPerRating = new Comparator<Book>() {
+        public int compare(Book a1, Book a2) {
+            Integer bookRating1 = a1.getRating();
+            Integer bookRating2 = a2.getRating();
+
+            return bookRating1.compareTo(bookRating2);
         }};
 }
 

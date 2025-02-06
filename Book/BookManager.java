@@ -46,6 +46,15 @@ public class BookManager {
     }
     public ArrayList<Book> showByRatingDecresing(){
         ArrayList<Book> sortedRatings = books;
-        sortedRatings.sort(Book.booksCompararPerRating);
+        sortedRatings.sort(Book.booksCompararPerRatingDecreixent);
+        return sortedRatings;
     }
+    public ArrayList<Book> showListOfBetterBooks (int quantitat){
+        ArrayList<Book>foundBooks = new ArrayList<>();
+        for (int i = 0; i < quantitat; i++){
+            foundBooks.add(showByRatingDecresing().get(i));
+        }
+        return foundBooks;
+    }
+
 }
