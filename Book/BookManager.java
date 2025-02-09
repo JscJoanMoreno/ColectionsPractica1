@@ -28,6 +28,7 @@ public class BookManager {
         for (Book b : books){
             if (b.getAuthor().equals(author)){
                 foundBook = b;
+
             }
         }
         return foundBook;
@@ -55,7 +56,23 @@ public class BookManager {
             foundBooks.add(showByRatingDecresing().get(i));
         }
         return foundBooks;
-
     }
-
+    public ArrayList<Book> BoockBettersThanMin (int minRating){
+        ArrayList<Book> foundBooks = new ArrayList<>();
+        for (Book book: books){
+            if (book.getRating()>minRating){
+                foundBooks.add(book);
+            }  
+        }
+        return foundBooks;
+    }
+    public void deleteBook (int id){
+        Book deleteBook = null;
+        for (Book b: books){
+            if (b.getId() == id){
+                books.remove(b);
+                System.out.println("llibre eliminat amb exit:=)");
+            }
+        }
+    }
 }
